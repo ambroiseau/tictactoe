@@ -70,10 +70,10 @@ class Game
   end
 
   def turn 
-    ObjectSpace.each_object(Player) do |obj|
+    ObjectSpace.each_object(Player) do |obj| #permet d'inspecter la class Player et traiter toutes les données générées . 
     @board.to_s
     puts 
-    puts "It's your turn #{obj.first_name}, pick a number on the grid that is not already taken !!"
+    puts "It's your turn #{obj.first_name}, pick a number on the grid that is not already taken, if you do, you skip your turn ;) ;) ;) ;)!!"
     @board.play(obj.symbol) 
       if @board.victory? == true 
         @board.to_s
@@ -86,5 +86,3 @@ end
 end
 
 Game.new.go
-
-
